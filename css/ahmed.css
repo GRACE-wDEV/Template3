@@ -1318,12 +1318,6 @@ a{
   position: relative;
   text-align: center;
 }
-@media (max-width:767px){
-  .stats h2{
-      font-size: 35px;
-      
-  }
-}
 .stats .container{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
