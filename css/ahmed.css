@@ -1316,10 +1316,12 @@ a{
   width: fit-content;
   margin: 0 auto 50px;
   position: relative;
+  text-align: center;
 }
 @media (max-width:767px){
   .stats h2{
       font-size: 35px;
+      
   }
 }
 .stats .container{
