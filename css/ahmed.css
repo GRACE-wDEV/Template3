@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 :root{
-  --main-color: #2196F3;
+  --main-color: #ec3750;
   --main-color-alt: #1787E0;
   --main-transition: .3s;
   --main-padding-top:100px;
@@ -124,11 +124,27 @@ a{
 /* End Global Rules */
 /* Start Header  */
 .header{
-  background-color: white;
   -webkit-box-shadow: 0 0 10 #ddd;
   -moz-box-shadow: 0 0 10 #ddd;
   box-shadow: 0 0 10px #ddd;
-  position: relative;
+  background-color: white;
+  position: fixed;
+  width: 100vw;
+  z-index: 100000;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;  
+  background-color: transparent;
+}
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.75); 
+  backdrop-filter: saturate(180%) blur(20px); 
+  .logo{
+    font-size: 32px;
+    height: 65px;
+  }
+  .main-nav > li > a{
+    height: 65px;
+    color: black;
+  }
 }
 .header .container{
   display: flex;
@@ -139,12 +155,14 @@ a{
 }
 .header .logo{
   color: var(--main-color);
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 36px;
+  font-weight: 900;
   height: 72px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 1px 1px 2px rgb(0 0 0 / 80%);
+  transition: var(--main-transition);
 }
 @media (max-width: 767px){
   .header .logo{
@@ -194,7 +212,6 @@ a{
 }
 .header .main-nav > li a:hover{
   color: var(--main-color);
-  background-color: #fafafa;
 }
 .mega-menu{
   position: absolute;
@@ -204,11 +221,13 @@ a{
   display: flex;
   padding:40px 20px;
   background-color: white;
-  z-index:-1;
+  z-index:-1000;
   border-bottom: 3px solid var(--main-color);
   gap: 40px;
   transition: top var(--main-transition), opacity var(--main-transition);
   opacity: 0;
+  z-index: 100000;
+  display: none;
 }
 @media(max-width:767px){
   .mega-menu{
@@ -861,9 +880,7 @@ a{
 .our-skills .skills{
   flex: 1;
 }
-.our-skills .skill{
-  
-}
+
 .our-skills .skill h3{
   display: flex;
   justify-content: space-between;
@@ -891,7 +908,7 @@ a{
   width: 0;
 }
 
-.our-skills .skill:first-child .the-progress span{
+/* .our-skills .skill:first-child .the-progress span{
   animation: progress1 5s alternate infinite;
 }
 .our-skills .skill:nth-child(2) .the-progress span{
@@ -902,7 +919,7 @@ a{
 }
 .our-skills .skill:last-child .the-progress span{
   animation: progress4 5s alternate 4s infinite;
-}
+} */
 /* End Skills */
 /* Start Work Steps  */
 .work-steps{
@@ -1609,7 +1626,7 @@ a{
   padding: 25px 0;
   color: white;
   text-align: center;
-  border-top: 1px solid #444
+  border-top: 1px solid #444;
 }
 /* End Footer  */
 /* Start Animation */
