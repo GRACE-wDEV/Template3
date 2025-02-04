@@ -48,6 +48,29 @@ a{
       width: 1170px;
   }
 }
+.scroll-to-top{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #ec3750;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: transparent;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000000;
+  display: none;
+  transition: var(--main-transition);
+}
+.scroll-to-top i {
+  font-size: 28px;
+}
+.scroll-to-top:hover{
+  scale: 1.02;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.627);
+}
 .main-title{
   font-size: 30px;
   border: 2px solid black;

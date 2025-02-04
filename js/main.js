@@ -39,3 +39,21 @@ window.onscroll = function() {
     }
 };
 
+// Scroll to Top Button 
+let scrollUP = document.querySelector(".scroll-to-top");
+
+window.onscroll = function()
+{
+    if(window.scrollY >= 600)
+    {
+        scrollUP.style.display = "block";
+    }
+    else scrollUP.style.display = "none";
+}
+scrollUP.onclick = function(){
+    window.scrollTo({
+        left: 0,
+        top: 0, 
+        behavior: "smooth",
+    });
+}
